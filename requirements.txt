@@ -3,3 +3,5 @@ opencv-python
 pytesseract
 tensorflow
 numpy
+opencv-python
+
