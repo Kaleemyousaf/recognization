@@ -1,6 +1,6 @@
 tensorflow
 numpy
-cv2
+ import cv2
 opencv-python
 opencv-python-headless
-python
+
