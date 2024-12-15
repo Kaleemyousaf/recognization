@@ -1,8 +1,5 @@
 opencv-python
 numpy
-pandas
-scikit-learn
-matplotlib
 tensorflow
-opencv-contrib-python
-opencv-python-headless
+pytesseract
+streamlit
