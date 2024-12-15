@@ -27,8 +27,15 @@ def detect_license_plate(image):
 
 # Plate Recognition using Tesseract
 def recognize_plate(image):
-    text = pytesseract.image_to_string(image, config='--psm 7')
-    return text.strip()
+    try:
+        text = pytesseract.image_to_string(image, config='--psm 7')
+        text = text.strip()
+        # If text is empty or doesn't meet criteria, return "Unknown Number"
+        if not text or len(text) < 3:  # Adjust the length condition as needed
+            return "Unknown Number"
+        return text
+    except Exception as e:
+        return "Unknown Number"
 
 # Streamlit interface
 st.title("License Plate Character Recognition")
@@ -47,6 +54,9 @@ if image_file is not None:
         st.success("License Plate Detected!")
         plate_text = recognize_plate(image)
         st.subheader("Recognized Plate:")
-        st.write(plate_text)
+        if plate_text == "Unknown Number":
+            st.error("Unable to recognize the license plate. Please try again with a clearer image.")
+        else:
+            st.write(plate_text)
     else:
         st.error("No License Plate Detected.")
