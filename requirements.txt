@@ -1,1 +1,5 @@
-r
+tensorflow
+numpy
+opencv-python
+opencv-python-headless
+requirements.txt
