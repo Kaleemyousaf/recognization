@@ -1,6 +1,6 @@
-streamlit==1.26.0
-opencv-python==4.8.0.76
-opencv-contrib-python==4.8.0.76
-pandas
+opencv-python
 numpy
+pandas
+scikit-learn
 matplotlib
+tensorflow
